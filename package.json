@@ -1,0 +1,29 @@
+{
+  "name": "microservices",
+  "version": "0.1.0",
+  "description": "api servisec (freecodecamp)",
+  "main": "app.js",
+  "dependencies": {
+    "express": "^4.13.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "api",
+    "node",
+    "express",
+    "freecodecamp"
+  ],
+  "author": "f021",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/f021/microservise.git"
+  },
+  "bugs": {
+    "url": "https://github.com/f021/microservise/issues"
+  },
+  "homepage": "https://github.com/f021/microservise#readme"
+}
