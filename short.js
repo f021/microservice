@@ -1,22 +1,29 @@
+'use strict';
+
 const http = require('http');
 const https = require('https');
 const url = require('url');
 
-const shortURL= () => {
+const protocols = {
+    'http:' : http,
+    'https' : https
+};
+
+const shortURL = () => {
   
-  var urls = [];
+  let urls = [];
   
   return {
     
     add(str, allow) {
       str = url.parse(str);
-      // if (str.protocol === null) {
-      //   return 'I need a URL';
-      // };
-      // (str.protocol === 'http' ? http : https).request()
-      // str.protocol
-      urls.push(str);
-      return 1;
+      if (protocols[str.protocol] ===  undefined) {
+        return { error: 'Wrong protocol...' };  
+      } else {
+        protocols[str.protocol].get(str, res => {
+          return str;
+        }).on('error', err => { error : 'Can\'t get ' + str });
+      }
     },
     
     get(index){
